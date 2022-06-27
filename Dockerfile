@@ -36,8 +36,8 @@ WORKDIR /var/www
 ADD . /var/www
 RUN chown -R www-data:www-data /var/www/storage
 RUN composer install
-RUN php artisan key:generate
 RUN yarn install
 RUN yarn production
+RUN touch /var/www/.env
 
 ENTRYPOINT ['/var/www/docker-entrypoint.sh']
