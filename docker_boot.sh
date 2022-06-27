@@ -4,7 +4,6 @@ chown -R www-data:www-data /var/www/storage
 
 if [ ! -z $BUDGET_SETUP ]; then
   composer install
-  cp .env.docker .env
   php artisan key:generate
   php artisan storage:link
 

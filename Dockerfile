@@ -31,3 +31,12 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x | bash - && \
     npm install -g yarn
 
 WORKDIR /var/www
+
+ADD . /var/www
+RUN chown -R www-data:www-data /var/www/storage
+RUN composer install
+RUN php artisan key:generate
+RUN yarn install
+RUN yarn production
+
+ENTRYPOINT ['/var/www/docker-entrypoint.sh']
