@@ -33,11 +33,13 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
 
 WORKDIR /var/www
 
-ADD . /var/www
+COPY --chown=www-data . /var/www
 RUN chown -R www-data:www-data /var/www/storage
 RUN composer install
 RUN yarn install
 RUN yarn production
 RUN touch /var/www/.env
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
-ENTRYPOINT ['/var/www/docker-entrypoint.sh']
+ENTRYPOINT ["/docker-entrypoint.sh"]
