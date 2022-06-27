@@ -8,7 +8,8 @@ RUN apt-get update && \
     apt-get install -y \
       nginx \
       cron \
-      supervisor
+      supervisor \
+      git
 
 # Configure NGINX
 COPY nginx.conf /etc/nginx/sites-enabled/default
