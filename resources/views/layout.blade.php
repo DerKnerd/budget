@@ -61,6 +61,9 @@
                                 <a href="/budgets" {!! (Request::path() == 'budgets') ? 'class="active"' : '' !!}><i class="fas fa-wallet fa-sm color-red"></i> <span class="hidden ml-05">{{ __('models.budgets') }}</span></a>
                             </li>
                             <li>
+                                <a href="/recurrings" {!! (Request::path() == 'recurrings') ? 'class="active"' : '' !!}><i class="fas fa-repeat fa-sm color-orange"></i> <span class="hidden ml-05">{{ __('models.budgets') }}</span></a>
+                            </li>
+                            <li>
                                 <a href="/tags" {!! (Request::path() == 'tags') ? 'class="active"' : '' !!}><i class="fas fa-tag fa-sm color-blue"></i> <span class="hidden ml-05">{{ __('models.tags') }}</span></a>
                             </li>
                             <li>
