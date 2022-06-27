@@ -41,5 +41,6 @@ RUN yarn production
 RUN touch /var/www/.env
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
+COPY supervisord.conf /supervisord.conf
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
